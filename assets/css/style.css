@@ -1,0 +1,310 @@
+/* Reset & Styling Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(../img/Desktop1.png);
+    background-position: center;
+    background-size: cover;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+/* Kontainer Utama (Mobile-First) */
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* Header */
+.header {
+    background-color: #158a42;
+    /* background-image: url(../img/header2.jpe);
+    background-size: cover;
+    background-position: center; */
+    color: white;
+    padding: 16px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+/* Kategori */
+.category-section {
+    margin: 20px 0;
+}
+
+.category-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.category-list {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.cat-btn {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.cat-btn.active {
+    background-color: #22c55e;
+    color: white;
+}
+
+/* Katalog Produk */
+.catalog-section .section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.catalog-section h2 {
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #16a34a;
+}
+
+/* Grid Produk (Default Mobile: 2 Kolom) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Kartu Produk */
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
+
+.product-info h3 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    color: #16a34a;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.product-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #64748b;
+}
+
+/* Modal Form */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.close:hover {
+    color: #1e293b;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #22c55e;
+}
+
+.error-msg {
+    color: #dc2626;
+    font-size: 0.75rem;
+    margin-top: 2px;
+    display: block;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #16a34a;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES: RESPONSIF TABLET & DESKTOP
+   ========================================== */
+
+/* Untuk Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 24px;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-box {
+        width: 300px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+/* Untuk Desktop / Laptop (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .search-box {
+        width: 380px;
+    }
+
+    .category-section h2, 
+    .catalog-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* Menjadi 4 kolom di layar lebar */
+        gap: 20px;
+    }
+
+    .product-card {
+        padding: 16px;
+    }
+
+    .product-info h3 {
+        font-size: 1.05rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+}

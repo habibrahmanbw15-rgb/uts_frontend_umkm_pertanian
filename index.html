@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - Pertanian Cerdas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header Semantik -->
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo">Pertanian Cerdas</h1>
+            <div class="header-actions">
+                <!-- Tombol navigasi dinamis berdasarkan role -->
+                <div id="navActionContainer">
+                    <a href="login.html" class="btn-secondary">Login</a>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari produk pertanian...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="main-container container">
+        <!-- Bagian Kategori -->
+        <section class="category-section">
+            <h2>Kategori Pilihan</h2>
+            <div class="category-list">
+                <button class="cat-btn active" data-category="Semua">Semua</button>
+                <button class="cat-btn" data-category="Hasil Panen">Hasil Panen</button>
+                <button class="cat-btn" data-category="Bibit">Bibit</button>
+                <button class="cat-btn" data-category="Pupuk">Pupuk</button>
+            </div>
+        </section>
+
+        <!-- Bagian Katalog Produk -->
+        <section class="catalog-section">
+            <div class="section-title">
+                <h2>Katalog Produk UMKM</h2>
+            </div>
+            <!-- Tempat Kartu Produk Dirender secara Dinamis (DOM) -->
+            <div id="productGrid" class="product-grid"></div>
+        </section>
+    </main>
+
+    <!-- Script Utama Katalog -->
+    <script type="module" src="assets/js/catalogApp.js"></script>
+</body>
+</html>

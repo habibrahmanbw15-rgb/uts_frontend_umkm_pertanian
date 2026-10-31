@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Pertanian Cerdas</title>
+    <!-- CSS Utama & CSS Khusus Dashboard Dipisah -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo">Admin Dashboard</h1>
+            <div class="header-actions">
+                <a href="index.html" class="btn-primary" style="text-decoration:none; margin-right:8px; background:#16a34a;">Lihat Katalog</a>
+                <button id="logoutBtn" style="background:#dc2626; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer;">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Notifikasi Berhasil Tambah/Edit Produk -->
+        <div id="alertSuccess" class="alert-success">
+            ✅ Produk berhasil disimpan!
+        </div>
+
+        <div class="admin-layout">
+            <!-- Bagian Form Tambah / Edit Produk -->
+            <section class="dashboard-card">
+                <h3 id="formTitle">Tambah Produk Baru</h3>
+                <form id="adminProductForm">
+                    <input type="hidden" id="editProductId"> <!-- Menyimpan ID saat mode edit -->
+                    
+                    <div class="form-group">
+                        <label for="prodName">Nama Produk</label>
+                        <input type="text" id="prodName" placeholder="Contoh: Cabai Rawit Merah">
+                        <small class="error-msg" id="nameError"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="prodCategory">Kategori</label>
+                        <select id="prodCategory">
+                            <option value="Hasil Panen">Hasil Panen</option>
+                            <option value="Bibit">Bibit</option>
+                            <option value="Pupuk">Pupuk</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prodPrice">Harga (Rp)</label>
+                        <input type="number" id="prodPrice" placeholder="35000">
+                        <small class="error-msg" id="priceError"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="prodStock">Stok</label>
+                        <input type="number" id="prodStock" placeholder="20">
+                        <small class="error-msg" id="stockError"></small>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" class="btn-submit">Simpan Produk</button>
+                    <button type="button" id="cancelEditBtn" class="btn-secondary" style="width:100%; margin-top:6px; display:none;">Batal Edit</button>
+                </form>
+            </section>
+
+            <!-- Bagian Tabel Produk -->
+            <section class="dashboard-card">
+                <h3>Daftar & Kelola Produk</h3>
+                <div class="table-responsive">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th>Nama Produk</th>
+                                <th>Kategori</th>
+                                <th>Harga</th>
+                                <th>Stok</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                            <!-- Data produk akan dirender lewat JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="assets/js/dashboardApp.js"></script>
+</body>
+</html>

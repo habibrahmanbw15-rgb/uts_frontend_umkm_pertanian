@@ -1,13 +1,13 @@
-import { getProducts, addProduct, filterProducts } from './productService.js';
-import { renderProducts } from './uiRenderer.js';
-import { validateProductForm } from './validator.js';
+import { getProducts, addProduct, filterProducts } from './moduls/productService.js';
+import { renderProducts } from './moduls/uiRenderer.js';
+import { validateProductForm } from './moduls/validator.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Tangkap elemen DOM
     const productGrid = document.getElementById('productGrid');
     const searchInput = document.getElementById('searchInput');
     const categoryButtons = document.querySelectorAll('.cat-btn');
-    
+
     // Elemen Modal
     const modal = document.getElementById('productModal');
     const openModalBtn = document.getElementById('openModalBtn');
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryButtons.forEach(b => b.classList.remove('active'));
             // Tambahkan ke tombol yang diklik
             e.target.classList.add('active');
-            
+
             currentCategory = e.target.getAttribute('data-category');
             updateCatalog();
         });

@@ -26,6 +26,7 @@ uts_proyek/
     ├── css/
     │   ├── style.css           # Styling utama & tata letak responsif
     │   └── dashboard.css       # Styling khusus halaman dashboard & tabel admin
+    │   └── login.css           # style untuk login html
     └── js/
         ├── loginApp.js         # Logika autentikasi login
         ├── catalogApp.js       # Logika interaksi katalog publik

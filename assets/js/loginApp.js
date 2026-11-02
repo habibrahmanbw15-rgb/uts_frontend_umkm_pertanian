@@ -1,4 +1,4 @@
-import { setRole } from './authService.js';
+import { setRole } from './moduls/authService.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Jika sukses, arahkan ke dashboard kelola produk (admin)
             window.location.href = 'dashboard.html';
         } else {
-            loginError.textContent = 'Username atau Password salah! (Gunakan admin / admin123)';
+            loginError.textContent = 'Username atau Password salah! (password sama dengan komdigi)';
         }
     });
 

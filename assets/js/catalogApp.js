@@ -1,6 +1,6 @@
-import { getProducts, filterProducts } from './productService.js';
-import { renderProducts } from './uiRenderer.js';
-import { getRole, logout } from './authService.js';
+import { getProducts, filterProducts } from './moduls/productService.js';
+import { renderProducts } from './moduls/uiRenderer.js';
+import { getRole, logout } from './moduls/authService.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const productGrid = document.getElementById('productGrid');

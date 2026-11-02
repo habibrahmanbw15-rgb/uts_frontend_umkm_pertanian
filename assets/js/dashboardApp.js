@@ -1,6 +1,6 @@
-import { getProducts, addProduct, updateProduct, deleteProduct } from './productService.js';
-import { getRole, logout } from './authService.js';
-import { validateProductForm } from './validator.js';
+import { getProducts, addProduct, updateProduct, deleteProduct } from './moduls/productService.js';
+import { getRole, logout } from './moduls/authService.js';
+import { validateProductForm } from './moduls/validator.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Keamanan Akses: Pastikan hanya admin yang bisa buka halaman ini
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     formTitle.textContent = 'Edit Produk';
                     submitBtn.textContent = 'Perbarui Produk';
                     cancelEditBtn.style.display = 'block';
-                    
+
                     // Gulir layar ke atas form
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
